@@ -171,7 +171,7 @@ async function handle(request: JsonRpcRequest): Promise<void> {
       result: {
         protocolVersion: '2024-11-05',
         capabilities: { tools: {} },
-        serverInfo: { name: 'tenantshield-mcp', version: '0.2.0' },
+        serverInfo: { name: 'tenantshield-mcp', version: '0.2.1' },
       },
     });
   } else if (request.method === 'ping') {

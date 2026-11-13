@@ -1,11 +1,11 @@
 {
   "name": "tenantshield",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "Apache-2.0",
   "homepage": "https://tenantshield.tensorjetai.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tensorjet-ai/tenantshield.git"
+    "url": "git+https://github.com/tensorjetai/tenantshield.git"
   },
   "type": "module",
   "engines": {

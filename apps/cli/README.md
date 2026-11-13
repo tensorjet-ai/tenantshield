@@ -253,12 +253,12 @@ jobs:
         env:
           TENANTSHIELD_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
         run: |
-          npx --yes tenantshield@0.2.0 test --auto-seed --fail-on high --output audit-report.json
+          npx --yes tenantshield@0.2.1 test --auto-seed --fail-on high --output audit-report.json
 
       - name: Generate SARIF Security Report
         if: always()
         run: |
-          npx --yes tenantshield@0.2.0 report audit-report.json --format sarif --output tenantshield.sarif
+          npx --yes tenantshield@0.2.1 report audit-report.json --format sarif --output tenantshield.sarif
 
       - name: Upload SARIF to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
@@ -281,9 +281,9 @@ jobs:
 ## Links & Ecosystem
 
 - **Homepage & Workbench**: [tenantshield.tensorjetai.com](https://tenantshield.tensorjetai.com)
-- **Organization**: [TensorJetAI](https://github.com/tensorjet-ai)
-- **GitHub Repository**: [github.com/tensorjet-ai/TenantShield](https://github.com/tensorjet-ai/TenantShield)
-- **Issues & Support**: [github.com/tensorjet-ai/TenantShield/issues](https://github.com/tensorjet-ai/TenantShield/issues)
+- **Organization**: [TensorJetAI](https://www.tensorjetai.com)
+- **GitHub Repository**: [github.com/tensorjetai/TenantShield](https://github.com/tensorjetai/TenantShield)
+- **Issues & Support**: [github.com/tensorjetai/TenantShield/issues](https://github.com/tensorjetai/TenantShield/issues)
 - **MCP Companion Server**: [`tenantshield-mcp`](https://www.npmjs.com/package/tenantshield-mcp)
 
 ---

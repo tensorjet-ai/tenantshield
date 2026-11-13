@@ -16,7 +16,7 @@ TenantShield MCP connects AI coding agents—including Cursor, Claude Code, Wind
 Add TenantShield MCP to Claude Code with a single command:
 
 ```bash
-claude mcp add tenantshield -- npx --yes tenantshield-mcp@0.2.0
+claude mcp add tenantshield -- npx --yes tenantshield-mcp@0.2.1
 ```
 
 ### 2. Cursor (`.cursor/mcp.json` or `~/.cursor/mcp.json`)
@@ -28,7 +28,7 @@ Add the server to your project or global Cursor configuration:
   "mcpServers": {
     "tenantshield": {
       "command": "npx",
-      "args": ["--yes", "tenantshield-mcp@0.2.0"],
+      "args": ["--yes", "tenantshield-mcp@0.2.1"],
       "env": {
         "TENANTSHIELD_DATABASE_URL": "postgresql://postgres:postgres@127.0.0.1:54322/postgres"
       }
@@ -44,7 +44,7 @@ Add the server to your project or global Cursor configuration:
   "mcpServers": {
     "tenantshield": {
       "command": "npx",
-      "args": ["--yes", "tenantshield-mcp@0.2.0"],
+      "args": ["--yes", "tenantshield-mcp@0.2.1"],
       "env": {
         "TENANTSHIELD_DATABASE_URL": "postgresql://postgres:postgres@127.0.0.1:54322/postgres"
       }
@@ -141,7 +141,7 @@ Create or update `.cursor/mcp.json` in your repository root:
   "mcpServers": {
     "tenantshield": {
       "command": "npx",
-      "args": ["--yes", "tenantshield-mcp@0.2.0"],
+      "args": ["--yes", "tenantshield-mcp@0.2.1"],
       "env": {
         "TENANTSHIELD_DATABASE_URL": "postgresql://postgres:postgres@127.0.0.1:54322/postgres"
       }
@@ -159,7 +159,7 @@ Add to `~/.codeium/windsurf/mcp_config.json`:
   "mcpServers": {
     "tenantshield": {
       "command": "npx",
-      "args": ["--yes", "tenantshield-mcp@0.2.0"],
+      "args": ["--yes", "tenantshield-mcp@0.2.1"],
       "env": {
         "TENANTSHIELD_DATABASE_URL": "postgresql://postgres:postgres@127.0.0.1:54322/postgres"
       }
@@ -199,9 +199,9 @@ Once configured, your AI coding agent can autonomously verify security boundarie
 ## Links & Ecosystem
 
 - **Homepage**: [tenantshield.tensorjetai.com](https://tenantshield.tensorjetai.com)
-- **Organization**: [TensorJetAI](https://github.com/tensorjet-ai)
-- **GitHub Repository**: [github.com/tensorjet-ai/TenantShield](https://github.com/tensorjet-ai/TenantShield)
-- **Issues & Support**: [github.com/tensorjet-ai/TenantShield/issues](https://github.com/tensorjet-ai/TenantShield/issues)
+- **Organization**: [TensorJetAI](https://www.tensorjetai.com)
+- **GitHub Repository**: [github.com/tensorjetai/TenantShield](https://github.com/tensorjetai/TenantShield)
+- **Issues & Support**: [github.com/tensorjetai/TenantShield/issues](https://github.com/tensorjetai/TenantShield/issues)
 - **Core CLI**: [`tenantshield`](https://www.npmjs.com/package/tenantshield)
 
 ---

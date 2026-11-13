@@ -1,0 +1,37 @@
+{
+  "name": "tenantshield-workspace",
+  "version": "0.2.0-dev",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:unit": "vitest run packages",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:e2e": "pnpm build && vitest run --config vitest.e2e.config.ts",
+    "pack:verify": "pnpm build && pnpm --filter tenantshield pack --pack-destination artifacts && pnpm --filter tenantshield-mcp pack --pack-destination artifacts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@types/node": "^22.16.4",
+    "@types/pg": "^8.15.4",
+    "@vitest/coverage-v8": "^3.2.7",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.5",
+    "pg": "^8.16.3",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.37.0",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@tenantshield/config",
+  "version": "0.1.0-dev",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean"
+  },
+  "dependencies": {
+    "yaml": "^2.8.0",
+    "zod": "^4.6.6"
+  }
+}

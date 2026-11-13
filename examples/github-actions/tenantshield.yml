@@ -1,0 +1,48 @@
+name: TenantShield
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  tenant-isolation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: npx --yes supabase@2.109.1 start
+        working-directory: examples/secure
+      - run: npx --yes supabase@2.109.1 db reset --local
+        working-directory: examples/secure
+      - name: Test tenant boundaries
+        working-directory: examples/secure
+        env:
+          TENANTSHIELD_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+        run: node ../../apps/cli/dist/index.js test --fail-on high --output ../../tenantshield-report.json
+      - if: always() && hashFiles('tenantshield-report.json') != ''
+        run: node apps/cli/dist/index.js report tenantshield-report.json --format html --output tenantshield-report.html
+      - if: always() && hashFiles('tenantshield-report.json') != ''
+        run: node apps/cli/dist/index.js report tenantshield-report.json --format sarif --output tenantshield-report.sarif
+      - if: always() && hashFiles('tenantshield-report.json') != ''
+        run: node apps/cli/dist/index.js report tenantshield-report.json --format markdown --output tenantshield-report.md
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tenantshield-reports
+          path: tenantshield-report.*
+          if-no-files-found: ignore
+      - if: always() && hashFiles('tenantshield-report.sarif') != ''
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: tenantshield-report.sarif

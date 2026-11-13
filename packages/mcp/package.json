@@ -1,0 +1,38 @@
+{
+  "name": "tenantshield-mcp",
+  "version": "0.2.0",
+  "license": "Apache-2.0",
+  "homepage": "https://tenantshield.tensorjetai.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tensorjet-ai/tenantshield.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "tenantshield-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "pg": "^8.16.3",
+    "yaml": "^2.8.0",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@tenantshield/catalog": "workspace:*",
+    "@tenantshield/config": "workspace:*",
+    "@tenantshield/findings": "workspace:*",
+    "@tenantshield/reporters": "workspace:*",
+    "@tenantshield/rules": "workspace:*",
+    "@tenantshield/runner": "workspace:*"
+  }
+}

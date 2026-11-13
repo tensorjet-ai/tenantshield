@@ -1,0 +1,5 @@
+project_id = "tenantshield-vulnerable"
+
+[db]
+port = 54322
+major_version = 15

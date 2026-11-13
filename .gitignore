@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+artifacts/
+.playwright-mcp/
+**/.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/
+tenantshield-report.*

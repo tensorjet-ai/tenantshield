@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": ".",
+    "types": ["node", "vitest/globals"],
+    "paths": {
+      "@tenantshield/config": ["packages/config/src/index.ts"],
+      "@tenantshield/catalog": ["packages/catalog/src/index.ts"],
+      "@tenantshield/findings": ["packages/findings/src/index.ts"],
+      "@tenantshield/reporters": ["packages/reporters/src/index.ts"],
+      "@tenantshield/rules": ["packages/rules/src/index.ts"],
+      "@tenantshield/runner": ["packages/runner/src/index.ts"]
+    }
+  },
+  "include": ["apps/**/*.ts", "packages/**/*.ts", "test/**/*.ts", "*.ts"],
+  "exclude": ["**/dist/**", "**/node_modules/**", "artifacts/**"]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "tenantshield",
+  "version": "0.2.0",
+  "license": "Apache-2.0",
+  "homepage": "https://tenantshield.tensorjetai.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tensorjet-ai/tenantshield.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "tenantshield": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "pg": "^8.16.3",
+    "smol-toml": "^1.9.0",
+    "yaml": "^2.8.0",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@tenantshield/catalog": "workspace:*",
+    "@tenantshield/config": "workspace:*",
+    "@tenantshield/findings": "workspace:*",
+    "@tenantshield/reporters": "workspace:*",
+    "@tenantshield/rules": "workspace:*",
+    "@tenantshield/runner": "workspace:*",
+    "@types/pg": "^8.15.4"
+  }
+}
